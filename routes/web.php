@@ -17,7 +17,11 @@ use Illuminate\Support\Facades\Auth;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', 'App\Http\Controllers\web\HomeController@home')->name('web.home');;
+Route::get('/', 'App\Http\Controllers\web\HomeController@home')->name('web.home');
+Route::get('/', 'App\Http\Controllers\web\SobreController@sobre')->name('web.sobre');
+Route::get('/', 'App\Http\Controllers\web\CalendarioController@calendario')->name('web.calendario');
+Route::get('/', 'App\Http\Controllers\web\NoticiaController@noticia')->name('web.noticia');
+Route::get('/', 'App\Http\Controllers\web\ContatoController@contato')->name('web.contato');
 
 Auth::routes();
 

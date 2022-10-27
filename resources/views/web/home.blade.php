@@ -23,6 +23,7 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="{{ url ('assets/img/favicon.png') }}"/>
     </head>
+
     <body>
 
         <!--========== HEADER ==========-->
@@ -51,12 +52,11 @@
                     <div class="collapse navbar-collapse nav-collapse">
                         <div class="menu-container">
                             <ul class="navbar-nav navbar-nav-right">
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="index.html">Home</a></li>
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">Pricing</a></li>
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="about.html">About</a></li>
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="products.html">Products</a></li>
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="faq.html">FAQ</a></li>
-                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="contact.html">Contact</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="{{ route('web.home') }}">Home</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('web.sobre') }}">Sobre Nós</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('web.calendario') }}">Calendário</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('web.noticia') }}">Notícias</a></li>
+                                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('web.contato') }}">Fale Conosco</a></li>
                             </ul>
                         </div>
                     </div>
@@ -572,7 +572,7 @@
         <!--========== END FOOTER ==========-->
 
         <!-- Back To Top -->
-        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Topo</a>
 
         <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
         <!-- CORE PLUGINS -->
