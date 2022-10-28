@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::table('noticias', function (Blueprint $table) {
-            $table->unsignedBigInteger('noticias_categorias_id')->after('title');
+            $table->unsignedBigInteger('noticias_categorias_id')->after('image');
             $table->foreign('noticias_categorias_id')->references('id')->on('noticias_categorias');
         });
     }

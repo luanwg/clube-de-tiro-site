@@ -3,7 +3,7 @@
 @section('content')
 
 @if (Route::getCurrentRoute()->getName() == "web.sobre")
-    @component('web.layouts._partials.top', ['title' => 'Sobre Nós', 'text' => 'Conheça um pouco sobre nossa história...'])
+    @component('web.layouts._components.top', ['title' => 'Sobre Nós', 'text' => 'Conheça um pouco sobre nossa história...'])
     @endcomponent
     @section('title', 'Sobre Nós')
 @endif
@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-sm-9">
             <h2>Nossa história</h2>
-            <div class="nossa-historia">
+            <div class="txt-pag">
                 <p>Em Extrema MG o Clube Extremense de Tiro iniciou suas atividades do tiro esportivo em 2014 com foco no esporte e na quebra dos paradigmas sobre armas de fogo, além disso, nosso intuito era o aperfeiçoamento nesta prática esportiva através de cursos e instruções que pudessem nos levar aos níveis mais elevados na pratica do tiro. Nascemos através de uma necessidade do mercado, carente de um espaço profissional e com atendimento diferenciado, que pudesse fomentar tanto o esporte, bem como uma atividade de lazer.</p>
                 <p>Nosso “desejo de menino” e nossa dedicação de encontrar um local adequado para a prática esportiva foi atendida, e através de uma simples brincadeira e por meio de um encontro casual a ideia foi apresentada ao Sr. LUIZ CARLOS DE TOLEDO que assim como nós também tinha os mesmos desejos e anseios. Nasceu ali então o que podemos chamar de “casamento perfeito”.</p>
                 <p>Como o universo sempre conspira a favor de quem acredita, o Sr. Luiz Carlos juntamente com o seu Pai JOSÉ RABELO nos ofereceu um terreno apropriado dentro da sua propriedade para início das obras; simples assim!!</p>
