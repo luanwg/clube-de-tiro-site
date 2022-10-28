@@ -2,6 +2,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 html, html a, body {
@@ -142,6 +143,11 @@ h4 {
   display: block;
   z-index: 3;
   text-decoration: none;
+}
+
+#scroll-conhecer {
+    scroll-margin-block-start: 95px;
+    scroll-margin-block-end: 100px;
 }
 
 /*------------------------------------------------------------------
@@ -887,7 +893,7 @@ fieldset[disabled] .btn-theme {
   height: 50px;
   font-size: 14px;
   font-weight: 400;
-  color: #a6a7aa;
+  color: #5a6fad;
   background: #fafafa;
   border: none;
   box-shadow: none;
@@ -908,7 +914,7 @@ fieldset[disabled] .btn-theme {
 }
 
 .form-control:focus {
-  color: #515769;
+  color: #b1b5c0;
   box-shadow: none;
 }
 
@@ -1537,4 +1543,12 @@ fieldset[disabled] .btn-theme {
 
 .height-400 {
   height: 400px !important;
+}
+
+/*--------------------------------------------------
+    [CET]
+----------------------------------------------------*/
+.nossa-historia p {
+    font-size: larger;
+    color: #272727;
 }

@@ -1,6 +1,6 @@
 var Layout = function () {
     'use strict';
-    
+
     // handle on page scroll
     var handleHeaderOnScroll = function() {
         if ($(window).scrollTop() > 60) {
@@ -8,14 +8,14 @@ var Layout = function () {
         } else {
             $('body').removeClass('page-on-scroll');
         }
-    }   
+    }
 
     // handle carousel
     var handleCarousel = function() {
-        var $item = $('.carousel .item'); 
+        var $item = $('.carousel .item');
         var $wHeight = $(window).height();
         $item.eq(0).addClass('active');
-        $item.height($wHeight); 
+        $item.height($wHeight);
         $item.addClass('full-screen');
 
         $('.carousel img').each(function() {

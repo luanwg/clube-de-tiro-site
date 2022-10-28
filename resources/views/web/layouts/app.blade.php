@@ -9,7 +9,7 @@
     <meta content="Clube Extremense de Tiro" name="description"/>
     <meta content="Luan Souza" name="author"/>
 
-    <title>Clube Extremense de Tiro</title>
+    <title>Clube Extremense de Tiro - @yield('title')</title>
 
     <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
     <link href="{{ url ('assets/vendor/simple-line-icons/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css"/>
@@ -25,11 +25,38 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url ('assets/img/favicon.png') }}"/>
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
 </head>
 <body>
-    <div id="app">
-    </div>
+
+        @include('web.layouts._partials.header')
+
+        @yield('content')
+
+        @include('web.layouts._partials.footer')
+        <!-- Back To Top -->
+        <a href="javascript:void(0);" class="js-back-to-top back-to-top">Topo</a>
+
+    <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- CORE PLUGINS -->
+    <script src="{{ url ('assets/vendor/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/jquery-migrate.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+
+    <!-- PAGE LEVEL PLUGINS -->
+    <script src="{{ url ('assets/vendor/jquery.easing.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/jquery.back-to-top.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/jquery.smooth-scroll.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/jquery.wow.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/jquery.parallax.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/swiper/js/swiper.jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/masonry/jquery.masonry.pkgd.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/vendor/masonry/imagesloaded.pkgd.min.js') }}" type="text/javascript"></script>
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <script src="{{ url ('assets/js/layout.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/js/components/wow.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/js/components/swiper.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url ('assets/js/components/masonry.min.js') }}" type="text/javascript"></script>
 </body>
 </html>
