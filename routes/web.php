@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Auth;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', 'App\Http\Controllers\web\HomeController@home')->name('web.home');
-Route::get('/sobre', 'App\Http\Controllers\web\SobreController@sobre')->name('web.sobre');
-Route::get('/calendario', 'App\Http\Controllers\web\CalendarioController@index')->name('web.calendario');
-Route::get('/galeria', 'App\Http\Controllers\web\GaleriaController@index')->name('web.galeria');
-Route::get('/noticias', 'App\Http\Controllers\web\NoticiaController@index')->name('web.noticia');
-Route::get('/contato', 'App\Http\Controllers\web\ContatoController@contato')->name('web.contato');
+Route::get('/', [App\Http\Controllers\web\HomeController::class, 'home'])->name('web.home');
+Route::get('sobre', [App\Http\Controllers\web\SobreController::class, 'sobre'])->name('web.sobre');
+Route::get('calendario', [App\Http\Controllers\web\CalendarioController::class, 'index'])->name('web.calendario');
+Route::get('galeria', [App\Http\Controllers\web\GaleriaController::class, 'index'])->name('web.galeria');
+Route::get('noticias', [App\Http\Controllers\web\NoticiaController::class, 'index'])->name('web.noticia');
+Route::get('contato', [App\Http\Controllers\web\ContatoController::class, 'contato'])->name('web.contato');
 
 Auth::routes();
 
