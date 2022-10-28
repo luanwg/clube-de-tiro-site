@@ -3,11 +3,84 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Calendario;
 use Illuminate\Http\Request;
 
 class CalendarioController extends Controller
 {
-    public function calendario() {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         return view('web.calendario');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Calendario  $calendario
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Calendario $calendario)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Calendario  $calendario
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Calendario $calendario)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Calendario  $calendario
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Calendario $calendario)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Calendario  $calendario
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Calendario $calendario)
+    {
+        //
     }
 }

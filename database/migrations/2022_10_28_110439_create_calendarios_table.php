@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('galerias', function (Blueprint $table) {
+        Schema::create('calendarios', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('image_src');
-            $table->string('title')->nullable();
-            $table->string('desc')->nullable();
+            $table->string('title');
+            $table->timestamp('starting_at');
+            $table->timestamp('ending_at');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
         });
@@ -31,9 +31,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('galerias', function (Blueprint $table) {
-            $table->dropForeign('galerias_user_id_foreign');
+        Schema::table('calendarios', function (Blueprint $table) {
+            $table->dropForeign('calendarios_user_id_foreign');
         });
-        Schema::dropIfExists('galerias');
+        Schema::dropIfExists('calendarios');
     }
 };
