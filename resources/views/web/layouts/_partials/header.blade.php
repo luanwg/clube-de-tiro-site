@@ -32,6 +32,10 @@
                             href="{{ route('web.sobre') }}">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-item-child nav-item-hover @if (Route::getCurrentRoute()->getName() == "web.cursos") ? active : '' @endif"
+                            href="{{ route('web.cursos') }}">Cursos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-item-child nav-item-hover @if (Route::getCurrentRoute()->getName() == "web.calendario") ? active : '' @endif"
                             href="{{ route('web.calendario') }}">Calendário</a>
                         </li>

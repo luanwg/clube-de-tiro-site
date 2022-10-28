@@ -1552,3 +1552,8 @@ fieldset[disabled] .btn-theme {
     font-size: larger;
     color: #272727;
 }
+.direita {
+    margin: 20px 0;
+    display: table;
+    float: right;
+}

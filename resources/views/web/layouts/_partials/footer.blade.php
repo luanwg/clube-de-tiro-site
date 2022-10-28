@@ -35,10 +35,13 @@
     <!-- Copyright -->
     <div class="content container">
         <div class="row">
-            <div class="col-xs-6">
-                <img class="footer-logo" src="{{ url ('assets/img/logo.png') }}" alt="Luan Souza">
+            <div class="col-xs-4">
+                <a href="{{ route('web.home') }}"><img class="footer-logo" src="{{ url ('assets/img/logo.png') }}" alt="CET Logo"></a>
             </div>
-            <div class="col-xs-6 text-right">
+            <div class="col-xm-3">
+                <a href="https://fmtp.com.br" target="_blank"><img class="footer-logo" src="{{ url ('assets/img/footer/fmtp.png') }}" alt="FMTP Logo"></a>
+            </div>
+            <div class="col-xs-8 text-right">
                 <p class="margin-b-0">Desenvolvido por: <a class="color-base fweight-700" href="https://www.alphawise.com.br">AlphaWise</a></p>
             </div>
         </div>

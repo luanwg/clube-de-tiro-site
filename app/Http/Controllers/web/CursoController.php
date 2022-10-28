@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Galeria;
+use App\Models\Curso;
 
-class GaleriaController extends Controller
+class CursoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +14,6 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        return view('web.galeria');
+        return view('web.cursos');
     }
 }

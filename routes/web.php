@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
 //});
 Route::get('/', [App\Http\Controllers\web\HomeController::class, 'home'])->name('web.home');
 Route::get('/sobre', [App\Http\Controllers\web\SobreController::class, 'sobre'])->name('web.sobre');
+Route::get('/cursos', [App\Http\Controllers\web\CursoController::class, 'index'])->name('web.cursos');
 Route::get('/calendario', [App\Http\Controllers\web\CalendarioController::class, 'index'])->name('web.calendario');
 Route::get('/galeria', [App\Http\Controllers\web\GaleriaController::class, 'index'])->name('web.galeria');
 Route::get('/noticia', [App\Http\Controllers\web\NoticiaController::class, 'index'])->name('web.noticia');
