@@ -52,6 +52,10 @@
     <script src="{{ url ('assets/vendor/swiper/js/swiper.jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ url ('assets/vendor/masonry/jquery.masonry.pkgd.min.js') }}" type="text/javascript"></script>
     <script src="{{ url ('assets/vendor/masonry/imagesloaded.pkgd.min.js') }}" type="text/javascript"></script>
+    <!-- PAGE LEVEL PLUGINS - Calendar -->
+    <link href="{{ url ('assets/lib-calendar/main.css') }}" rel='stylesheet' />
+    <script src="{{ url ('assets/lib-calendar/main.js') }}"></script>
+    <script src="{{ url ('assets/lib-calendar/locales-all.js') }}"></script>
 
     <!-- PAGE LEVEL SCRIPTS -->
     <script src="{{ url ('assets/js/layout.js') }}" type="text/javascript"></script>

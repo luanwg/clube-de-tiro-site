@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price', 5, 2);
+            $table->string('mini_desc');
+            $table->string('full_desc');
             $table->timestamps();
         });
     }
