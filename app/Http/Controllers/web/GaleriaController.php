@@ -5,6 +5,7 @@ namespace App\Http\Controllers\web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Galeria;
+use App\Models\GaleriaCategoria;
 
 class GaleriaController extends Controller
 {
@@ -15,6 +16,8 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        return view('web.galeria');
+        $galerias = Galeria::all();
+        $galerias_categorias = GaleriaCategoria::all();
+        return view('web.galeria', ['galerias' => $galerias, 'galerias_categorias' => $galerias_categorias]);
     }
 }

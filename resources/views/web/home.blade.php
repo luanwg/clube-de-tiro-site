@@ -37,7 +37,7 @@
                         <div class="carousel-centered">
                             <div class="margin-b-40">
                                 <h2 class="carousel-title">CET</h2>
-                                <p>Clube Extremense de Tiro - Venha nos conhecer!</p>
+                                <p>Extremense de Tiro - Venha nos conhecer!</p>
                             </div>
                             <a href="#scroll-conhecer" class="btn-theme btn-theme-sm btn-white-brd text-uppercase"><span class="icon-arrow-down large-icons"></span></a>
                         </div>

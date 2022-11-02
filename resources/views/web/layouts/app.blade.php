@@ -24,6 +24,8 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url ('assets/img/favicon.png') }}"/>
+    
+    <script src="{{ url ('assets/vendor/jquery.min.js') }}" type="text/javascript"></script>
 
 
 </head>
@@ -39,7 +41,7 @@
 
     <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
     <!-- CORE PLUGINS -->
-    <script src="{{ url ('assets/vendor/jquery.min.js') }}" type="text/javascript"></script>
+    
     <script src="{{ url ('assets/vendor/jquery-migrate.min.js') }}" type="text/javascript"></script>
     <script src="{{ url ('assets/vendor/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
@@ -56,6 +58,12 @@
     <link href="{{ url ('assets/lib-calendar/main.css') }}" rel='stylesheet' />
     <script src="{{ url ('assets/lib-calendar/main.js') }}"></script>
     <script src="{{ url ('assets/lib-calendar/locales-all.js') }}"></script>
+    <!-- PAGE LEVEL PLUGINS - LightGalery -->
+    <link rel="stylesheet" media="screen, print" href="{{ url ('assets/css/lightgallery/lightgallery.bundle.css') }}">
+    <script src="{{ url ('assets/js/lightgallery/lightgallery.bundle.js') }}"></script>
+    
+    <link rel="stylesheet" media="screen, print" href="{{ url ('assets/css/lightgallery/lg-video.css') }}">
+    <script src="{{ url ('assets/js/plugins/video/lg-video.min.js') }}"></script>
 
     <!-- PAGE LEVEL SCRIPTS -->
     <script src="{{ url ('assets/js/layout.js') }}" type="text/javascript"></script>
