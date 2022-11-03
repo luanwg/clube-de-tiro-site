@@ -16,9 +16,10 @@ return new class extends Migration
         Schema::create('cursos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->decimal('price', 5, 2);
+            $table->decimal('price', 7, 2);
             $table->string('mini_desc');
-            $table->string('full_desc');
+            $table->text('full_desc');
+            $table->string('icon');
             $table->timestamps();
         });
     }

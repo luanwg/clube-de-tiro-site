@@ -14,6 +14,17 @@ class CursoController extends Controller
      */
     public function index()
     {
-        return view('web.cursos');
+        $cursos = Curso::all();
+        return view('web.cursos', ['cursos' => $cursos]);
+    }
+
+    public function curso(int $id) {
+        $curso = Curso::find($id);
+        if ($curso) {
+            return view('web.cursos', ['curso' => $curso]);
+        } else {
+            return redirect('/cursos');
+        }
+
     }
 }

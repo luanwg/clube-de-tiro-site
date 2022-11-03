@@ -32,7 +32,7 @@
                             href="{{ route('web.sobre') }}">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-item-child nav-item-hover @if (Route::getCurrentRoute()->getName() == "web.cursos") ? active : '' @endif"
+                            <a class="nav-item-child nav-item-hover @if (Route::getCurrentRoute()->getName() == "web.cursos" || Route::getCurrentRoute()->getName() == "web.curso") ? active : '' @endif"
                             href="{{ route('web.cursos') }}">Cursos</a>
                         </li>
                         <li class="nav-item">
@@ -44,8 +44,8 @@
                             href="{{ route('web.galeria') }}">Galeria</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-item-child nav-item-hover @if (Route::getCurrentRoute()->getName() == "web.noticia") ? active : '' @endif"
-                            href="{{ route('web.noticia') }}">Notícias</a>
+                            <a class="nav-item-child nav-item-hover @if (Route::getCurrentRoute()->getName() == "web.noticias" || Route::getCurrentRoute()->getName() == "web.noticia") ? active : '' @endif"
+                            href="{{ route('web.noticias') }}">Notícias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-item-child nav-item-hover @if (Route::getCurrentRoute()->getName() == "web.contato") ? active : '' @endif"

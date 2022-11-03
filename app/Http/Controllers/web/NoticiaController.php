@@ -16,15 +16,15 @@ class NoticiaController extends Controller
     public function index()
     {
         $noticias = Noticia::orderBy('id', 'DESC')->get();
-        return view('web.noticia', ['noticias' => $noticias]);
+        return view('web.noticias', ['noticias' => $noticias]);
     }
 
     public function noticia(int $id) {
         $noticia = Noticia::find($id);
         if ($noticia) {
-            return view('web.noticia', ['noticia' => $noticia]);
+            return view('web.noticias', ['noticia' => $noticia]);
         } else {
-            return redirect('/noticia');
+            return redirect('/noticias');
         }
 
     }

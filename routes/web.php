@@ -20,10 +20,11 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [App\Http\Controllers\web\HomeController::class, 'home'])->name('web.home');
 Route::get('/sobre', [App\Http\Controllers\web\SobreController::class, 'sobre'])->name('web.sobre');
 Route::get('/cursos', [App\Http\Controllers\web\CursoController::class, 'index'])->name('web.cursos');
+Route::get('/cursos/{id?}', [App\Http\Controllers\web\CursoController::class, 'curso'])->name('web.curso');
 Route::get('/calendario', [App\Http\Controllers\web\CalendarioController::class, 'index'])->name('web.calendario');
 Route::get('/galeria', [App\Http\Controllers\web\GaleriaController::class, 'index'])->name('web.galeria');
-Route::get('/noticia', [App\Http\Controllers\web\NoticiaController::class, 'index'])->name('web.noticia');
-Route::get('/noticia/{id?}', [App\Http\Controllers\web\NoticiaController::class, 'noticia'])->name('web.noticia');
+Route::get('/noticias', [App\Http\Controllers\web\NoticiaController::class, 'index'])->name('web.noticias');
+Route::get('/noticias/{id?}', [App\Http\Controllers\web\NoticiaController::class, 'noticia'])->name('web.noticia');
 Route::get('/contato', [App\Http\Controllers\web\ContatoController::class, 'contato'])->name('web.contato');
 
 Auth::routes();

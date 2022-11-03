@@ -52,9 +52,9 @@
         <div id="scroll-conhecer"></div>
         <div class="bg-color-sky-light" data-auto-height="true">
             <div class="content-lg container">
-            <div class="content container">
-                <h2>Próximos Eventos</h2>
-            </div>
+                <div class="content container">
+                    <h2>Próximos Eventos</h2>
+                </div>
                 <div class="row row-space-1 margin-b-2">
                     <div class="col-sm-4 sm-margin-b-2">
                         <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">

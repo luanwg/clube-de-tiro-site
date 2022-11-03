@@ -2,19 +2,18 @@
 
 @section('content')
 
-@if (Route::getCurrentRoute()->getName() == "web.noticia")
-    @if (isset($noticia))
-        @component('web.layouts._components.top', ['title' => $noticia->title, 'text' => $noticia->created_at->format('d/m/Y H:i')])
-        @endcomponent
-        @php $subtitle = ""; @endphp
-    @else
-        @component('web.layouts._components.top', ['title' => 'Notícias', 'text' => 'Fique por dentro de todas novidades'])
-        @endcomponent
-        @php $subtitle = "Últimas Novidades"; @endphp
-    @endif
-
-    @section('title', 'Notícias')
+@if (isset($noticia))
+    @component('web.layouts._components.top', ['title' => $noticia->title, 'text' => $noticia->created_at->format('d/m/Y H:i')])
+    @endcomponent
+    @php $subtitle = ""; @endphp
+@else
+    @component('web.layouts._components.top', ['title' => 'Notícias', 'text' => 'Fique por dentro de todas novidades'])
+    @endcomponent
+    @php $subtitle = "Últimas Novidades"; @endphp
 @endif
+
+@section('title', 'Notícias')
+
 <!-- Noticias -->
 <div class="content-lg container">
     <div class="row margin-b-40">
@@ -43,7 +42,13 @@
                         </div>
                     </div>
 
-                    <p>{{ mb_strimwidth($noticia->text, 0, 150, "..."); }}</p>
+                    <p>
+                        @if (strlen($noticia->desc) > 150)
+                            {{ mb_strimwidth($noticia->desc, 0, 150, "...") }}
+                        @else
+                            {{ $noticia->desc }}
+                        @endif
+                        </p>
                     <a class="link" href="{{ route('web.noticia', ['id' => $noticia->id]) }}">Leia Mais</a>
                 </div>
                 <!-- End Latest Products -->
