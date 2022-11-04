@@ -34,9 +34,7 @@
 </style>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzYsvi1JAcnaL3s8gXWG_P10s__KGzwJM&callback=initMap"></script> -->
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzYsvi1JAcnaL3s8gXWG_P10s__KGzwJM&callback=initMap&v=weekly" defer></script> -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzYsvi1JAcnaL3s8gXWG_P10s__KGzwJM"></script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
 
 <script type="text/javascript">
     let map;
