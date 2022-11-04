@@ -195,8 +195,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Cornford\Googlmapper\MapperServiceProvider::class,
-
     ],
 
     /*
@@ -212,7 +210,6 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-        'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
     ])->toArray(),
 
 ];

@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div id="map">
-                    {!! Mapper::render() !!}
+
                 </div>
             </div>
         </div>
