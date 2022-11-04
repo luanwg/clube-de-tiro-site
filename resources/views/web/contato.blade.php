@@ -13,7 +13,9 @@
 
         <div class="row">
             <div class="col-md-6">
-                <div id="map"></div>
+                <div id="map">
+                    {!! Mapper::render() !!}
+                </div>
             </div>
         </div>
 
@@ -32,18 +34,4 @@
 }
 
 </style>
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-
-<script type="text/javascript">
-    let map;
-    window.addEventListener('load', (event) => {
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 8,
-        });
-    });
-
-</script>
 @endsection
