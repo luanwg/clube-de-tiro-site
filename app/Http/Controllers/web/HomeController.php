@@ -10,8 +10,8 @@ use App\Models\Noticia;
 class HomeController extends Controller
 {
     public function home() {
-        $calendarios = Calendario::all();
-        $noticias = Noticia::all();
+        $calendarios = Calendario::orderBy('id', 'desc')->limit(3)->get();
+        $noticias = Noticia::orderBy('id', 'desc')->limit(3)->get();
         return view('web.home', ['calendarios' => $calendarios, 'noticias' => $noticias]);
     }
 }
