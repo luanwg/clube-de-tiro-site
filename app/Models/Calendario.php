@@ -9,7 +9,9 @@ class Calendario extends Model
 {
     use HasFactory;
 
-    public function calendarioevento() {
-        return $this->belongsTo('App\Models\CalendarioEvento', 'calendario_eventos_id', 'id');
+    protected $dates = ['starting_at', 'ending_at'];
+
+    public function evento() {
+        return $this->hasOne(CalendarioEvento::class, 'id', 'calendario_eventos_id');
     }
 }

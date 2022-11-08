@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: '{{$calendario->title}}',
             start: '{{$start}}',
             end: '{{$end}}',
-            color: '{{$calendario->calendarioevento->color}}'
+            color: '{{$calendario->evento->color}}'
             },
         @endforeach
     ]

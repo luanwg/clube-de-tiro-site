@@ -3,6 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
+
     <div class="conteudo-destaque">
 
         <!--========== SLIDER ==========-->
@@ -56,99 +57,67 @@
                     <h2>Próximos Eventos</h2>
                 </div>
                 <div class="row row-space-1 margin-b-2">
-                    <div class="col-sm-4 sm-margin-b-2">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-chemistry"></i>
+                    <div class="col-sm-12">
+                        @foreach ($calendarios as $key => $calendario)
+                            <div class="col-sm-4 sm-margin-b-2">
+                                <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                                    <div class="service" data-height="height">
+                                        <div class="service-element">
+                                            <i class="service-icon icon-calendar"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3>{{ $calendario->title }}</h3>
+                                            <p><button type="button" class="btn" style="cursor: default; background-color: {{$calendario->evento->color}}; color: #ffffff;">{{$calendario->evento->name}}</button></p>
+                                            <p class="margin-b-5">{{ $calendario->starting_at->format('d/m/Y H:m') }}</p>
+                                        </div>
+                                        <a href="{{ route('web.calendario') }}" class="content-wrapper-link"></a>
+                                    </div>
                                 </div>
-                                <div class="service-info">
-                                    <h3>Evento 1</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
-                    <div class="col-sm-4 sm-margin-b-2">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".2s">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-screen-tablet"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Evento 2</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".1s">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-badge"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Evento 3</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>
-                            </div>
-                        </div>
+                    
+                    <div class="direita wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".7s">
+                        <a href="{{ route('web.calendario') }}" class="btn-theme btn-theme-sm text-uppercase">Ver Todos</a>
                     </div>
                 </div>
                 <!--// end row -->
-
-                <div class="row row-space-1">
-                    <div class="col-sm-4 sm-margin-b-2">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".4s">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-notebook"></i>
+                
+                <div class="content container">
+                    <h2>Últimas Notícias</h2>
+                </div>
+                <div class="row row-space-1 margin-b-2">
+                    <div class="col-sm-12">
+                        @foreach ($noticias as $key => $noticia)
+                            <div class="col-sm-4 sm-margin-b-2">
+                                <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".3s">
+                                    <div class="service" data-height="height">
+                                        <div class="service-element">
+                                            <i class="service-icon icon-calendar"></i>
+                                        </div>
+                                        <div class="service-info">
+                                            <h3>{{ $noticia->title }}</h3>
+                                            <p>
+                                                @if (strlen($noticia->desc) > 150)
+                                                    {{ mb_strimwidth($noticia->desc, 0, 150, "...") }}
+                                                @else
+                                                    {{ $noticia->desc }}
+                                                @endif
+                                            </p>
+                                            <p class="margin-b-5"><span class="text-uppercase margin-l-20">{{ $noticia->created_at->format('d/m/Y H:i') }}</span></p>
+                                        </div>
+                                        <a href="{{ route('web.noticia', ['id' => $noticia->id]) }}" class="content-wrapper-link"></a>
+                                    </div>
                                 </div>
-                                <div class="service-info">
-                                    <h3>Evento 4</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
-                    <div class="col-sm-4 sm-margin-b-2">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".5s">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-speedometer"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Evento 5</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".6s">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-badge"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Evento 6</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>
-                            </div>
-                        </div>
+                    
+                    <div class="direita wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".7s">
+                        <a href="{{ route('web.noticias') }}" class="btn-theme btn-theme-sm text-uppercase">Ver Todos</a>
                     </div>
                 </div>
                 <!--// end row -->
-                <div class="direita wow fadeInLeft" data-wow-duration=".3" data-wow-delay=".7s">
-                    <a href="#" class="btn-theme btn-theme-sm text-uppercase">Ver Todos</a>
-                </div>
 
             </div>
         </div>
@@ -175,10 +144,10 @@
                                 <img class="full-width img-responsive" src="{{ url ('assets/img/800x400/01.jpg') }}" alt="Portfolio Image">
                             </div>
                             <div class="work-content">
-                                <h3 class="color-white margin-b-5">Evento 1</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                <h3 class="color-white margin-b-5">Imagem 1</h3>
+                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
                             </div>
-                            <a class="content-wrapper-link" href="#"></a>
+                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
                         </div>
                         <!-- End Work -->
                     </div>
@@ -189,10 +158,10 @@
                                 <img class="full-width img-responsive" src="{{ url ('assets/img/397x400/01.jpg') }}" alt="Portfolio Image">
                             </div>
                             <div class="work-content">
-                                <h3 class="color-white margin-b-5">Evento 2</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                <h3 class="color-white margin-b-5">Imagem 2</h3>
+                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
                             </div>
-                            <a class="content-wrapper-link" href="#"></a>
+                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
                         </div>
                         <!-- End Work -->
                     </div>
@@ -203,10 +172,10 @@
                                 <img class="full-width img-responsive" src="{{ url ('assets/img/397x300/01.jpg') }}" alt="Portfolio Image">
                             </div>
                             <div class="work-content">
-                                <h3 class="color-white margin-b-5">Evento 3</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                <h3 class="color-white margin-b-5">Imagem 3</h3>
+                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
                             </div>
-                            <a class="content-wrapper-link" href="#"></a>
+                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
                         </div>
                         <!-- End Work -->
                     </div>
@@ -217,10 +186,10 @@
                                 <img class="full-width img-responsive" src="{{ url ('assets/img/397x300/02.jpg') }}" alt="Portfolio Image">
                             </div>
                             <div class="work-content">
-                                <h3 class="color-white margin-b-5">Evento 4</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                <h3 class="color-white margin-b-5">Imagem 4</h3>
+                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
                             </div>
-                            <a class="content-wrapper-link" href="#"></a>
+                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
                         </div>
                         <!-- End Work -->
                     </div>
@@ -231,10 +200,10 @@
                                 <img class="full-width img-responsive" src="{{ url ('assets/img/397x300/03.jpg') }}" alt="Portfolio Image">
                             </div>
                             <div class="work-content">
-                                <h3 class="color-white margin-b-5">Evento 5</h3>
-                                <p class="color-white margin-b-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
+                                <h3 class="color-white margin-b-5">Imagem 5</h3>
+                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
                             </div>
-                            <a class="content-wrapper-link" href="#"></a>
+                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
                         </div>
                         <!-- End Work -->
                     </div>
