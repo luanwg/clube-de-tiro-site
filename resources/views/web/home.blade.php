@@ -137,76 +137,31 @@
                 <!-- Masonry Grid -->
                 <div class="masonry-grid">
                     <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".1s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ url ('assets/img/800x400/01.jpg') }}" alt="Portfolio Image">
+
+                    @foreach ($galerias as $key => $galeria)
+                        @if ($loop->first)
+                            <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8">
+                        @else
+                            <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+                        @endif
+                        
+                            <!-- Work -->
+                            <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".{{$key}}s">
+                                <div class="work-overlay">
+                                    <img class="full-width img-responsive" src="{{ url ($galeria->image_src) }}" alt="{{$galeria->title}}">
+                                </div>
+                                <div class="work-content">
+                                    <h3 class="color-white margin-b-5">{{$galeria->title}}</h3>
+                                    <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
+                                </div>
+                                <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
                             </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Imagem 1</h3>
-                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
-                            </div>
-                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
+                            <!-- End Work -->
                         </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".2s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ url ('assets/img/397x400/01.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Imagem 2</h3>
-                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
-                            </div>
-                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ url ('assets/img/397x300/01.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Imagem 3</h3>
-                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
-                            </div>
-                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".4s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ url ('assets/img/397x300/02.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Imagem 4</h3>
-                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
-                            </div>
-                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
-                    <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
-                        <!-- Work -->
-                        <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".5s">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="{{ url ('assets/img/397x300/03.jpg') }}" alt="Portfolio Image">
-                            </div>
-                            <div class="work-content">
-                                <h3 class="color-white margin-b-5">Imagem 5</h3>
-                                <p class="color-white margin-b-0">Clique na imagem para ir para a Galeria</p>
-                            </div>
-                            <a class="content-wrapper-link" href="{{ route('web.galeria') }}"></a>
-                        </div>
-                        <!-- End Work -->
-                    </div>
+
+                    @endforeach
+                    
+
                 </div>
                 <!-- End Masonry Grid -->
             </div>
