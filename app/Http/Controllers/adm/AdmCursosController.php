@@ -12,10 +12,19 @@ class AdmCursosController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
      */
+
+    public function __construct(AdmCursos $cursos)
+    {
+        $this->cursos = $cursos;
+    }
+
+
     public function index()
     {
-        return view('adm.cursos');
+        $cursos = $this->cursos->all();
+        return view('adm.cursos.index', ['cursos' => $cursos]);
     }
 
     /**
@@ -25,7 +34,7 @@ class AdmCursosController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.cursos.create');
     }
 
     /**
@@ -36,7 +45,8 @@ class AdmCursosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        AdmCursos::create($request->all());
+        return redirect()->route('adm.cursos.index');
     }
 
     /**
@@ -56,9 +66,9 @@ class AdmCursosController extends Controller
      * @param  \App\Models\AdmCursos  $admCursos
      * @return \Illuminate\Http\Response
      */
-    public function edit(AdmCursos $admCursos)
+    public function edit(AdmCursos $curso)
     {
-        //
+        return view('adm.cursos.edit', ['curso' => $curso]);
     }
 
     /**
@@ -68,9 +78,10 @@ class AdmCursosController extends Controller
      * @param  \App\Models\AdmCursos  $admCursos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AdmCursos $admCursos)
+    public function update(Request $request, AdmCursos $curso)
     {
-        //
+        $curso->update($request->all());
+        return redirect()->route('adm.cursos.index');
     }
 
     /**
@@ -79,8 +90,9 @@ class AdmCursosController extends Controller
      * @param  \App\Models\AdmCursos  $admCursos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AdmCursos $admCursos)
+    public function destroy(AdmCursos $curso)
     {
-        //
+        $curso->delete();
+        return redirect()->route('adm.cursos.index');
     }
 }

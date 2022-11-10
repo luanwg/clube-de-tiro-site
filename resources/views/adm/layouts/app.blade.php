@@ -36,8 +36,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('adm.sobre')}}">Sobre Nós</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('adm.cursos')}}">Cursos</a>
+                            <li class="nav-item dropdown">
+                                <a id="cursosDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Cursos</a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cursosDropdown">
+                                    <a class="dropdown-item" href="{{route('adm.cursos.create')}}">Adicionar Novo</a>
+                                    <a class="dropdown-item" href="{{route('adm.cursos.index')}}">Editar/Excluir</a>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('adm.calendario')}}">Calendário</a>

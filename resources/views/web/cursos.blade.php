@@ -23,8 +23,8 @@
                     <div class="row margin-b-40">
                         <div class="col-sm-6">
                             <h2>{{ $curso->name }}</h2>
-                            <div class="txt-pag">
-                                <p>{{ $curso->full_desc }}</p>
+                            <div>
+                                <p>{!! $curso->full_desc !!}</p>
                             </div>
                         </div>
                     </div>

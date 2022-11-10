@@ -29,12 +29,12 @@ Route::get('/contato', [App\Http\Controllers\web\ContatoController::class, 'cont
 
 Auth::routes();
 
-Route::middleware('auth')->group(function() {
-    Route::get('/adm', [App\Http\Controllers\adm\IndexController::class, 'index'])->name('adm.index');
-    Route::get('/adm/sobre', [App\Http\Controllers\adm\AdmSobreController::class, 'index'])->name('adm.sobre');
-    Route::put('/adm/sobre/{id}', [App\Http\Controllers\adm\AdmSobreController::class, 'update'])->name('adm.sobre.update');
-    Route::get('/adm/cursos', [App\Http\Controllers\adm\AdmCursosController::class, 'index'])->name('adm.cursos');
-    Route::get('/adm/calendario', [App\Http\Controllers\adm\AdmCalendarioController::class, 'index'])->name('adm.calendario');
-    Route::get('/adm/galeria', [App\Http\Controllers\adm\AdmGaleriaController::class, 'index'])->name('adm.galeria');
-    Route::get('/adm/noticias', [App\Http\Controllers\adm\AdmNoticiasController::class, 'index'])->name('adm.noticias');
+Route::middleware('auth')->prefix('adm')->name('adm.')->group(function() {
+    Route::get('/', [App\Http\Controllers\adm\IndexController::class, 'index'])->name('index');
+    Route::get('/sobre', [App\Http\Controllers\adm\AdmSobreController::class, 'index'])->name('sobre');
+    Route::put('/sobre/{id}', [App\Http\Controllers\adm\AdmSobreController::class, 'update'])->name('sobre.update');
+    Route::resource('/cursos', App\Http\Controllers\adm\AdmCursosController::class);
+    Route::get('/calendario', [App\Http\Controllers\adm\AdmCalendarioController::class, 'index'])->name('calendario');
+    Route::get('/galeria', [App\Http\Controllers\adm\AdmGaleriaController::class, 'index'])->name('galeria');
+    Route::get('/noticias', [App\Http\Controllers\adm\AdmNoticiasController::class, 'index'])->name('noticias');
 });
