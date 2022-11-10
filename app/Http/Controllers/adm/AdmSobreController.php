@@ -13,9 +13,16 @@ class AdmSobreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct(AdmSobre $sobre)
+    {
+        $this->sobre = $sobre;
+    }
+
     public function index()
     {
-        return view('adm.sobre');
+        $sobre = $this->sobre->all();
+        return view('adm.sobre', ['sobre' => $sobre]);
     }
 
     /**
@@ -68,9 +75,11 @@ class AdmSobreController extends Controller
      * @param  \App\Models\AdmSobre  $admSobre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AdmSobre $admSobre)
+    public function update(Request $request, $id)
     {
-        //
+        $sobre = $this->sobre->find($id);
+        $sobre->update($request->all());
+        return redirect('/adm');
     }
 
     /**
