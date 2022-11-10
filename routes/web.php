@@ -29,4 +29,11 @@ Route::get('/contato', [App\Http\Controllers\web\ContatoController::class, 'cont
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function() {
+    Route::get('/adm', [App\Http\Controllers\adm\IndexController::class, 'index'])->name('adm.index');
+    Route::get('/adm/sobre', [App\Http\Controllers\adm\AdmSobreController::class, 'index'])->name('adm.sobre');
+    Route::get('/adm/cursos', [App\Http\Controllers\adm\AdmCursosController::class, 'index'])->name('adm.cursos');
+    Route::get('/adm/calendario', [App\Http\Controllers\adm\AdmCalendarioController::class, 'index'])->name('adm.calendario');
+    Route::get('/adm/galeria', [App\Http\Controllers\adm\AdmGaleriaController::class, 'index'])->name('adm.galeria');
+    Route::get('/adm/noticias', [App\Http\Controllers\adm\AdmNoticiasController::class, 'index'])->name('adm.noticias');
+});
