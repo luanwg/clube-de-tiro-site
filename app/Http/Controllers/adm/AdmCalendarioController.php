@@ -5,6 +5,7 @@ namespace App\Http\Controllers\adm;
 use App\Http\Controllers\Controller;
 use App\Models\AdmCalendario;
 use Illuminate\Http\Request;
+use App\Models\AdmCalendarioEvento;
 
 class AdmCalendarioController extends Controller
 {
@@ -15,7 +16,8 @@ class AdmCalendarioController extends Controller
      */
     public function index()
     {
-        return view('adm.calendario');
+        $calendarios = AdmCalendario::all();
+        return view('adm.calendario.index', ['calendarios' => $calendarios]);
     }
 
     /**
@@ -25,7 +27,8 @@ class AdmCalendarioController extends Controller
      */
     public function create()
     {
-        //
+        $calendario_eventos = AdmCalendarioEvento::all();
+        return view('adm.calendario.create', ['calendario_eventos' => $calendario_eventos]);
     }
 
     /**
@@ -36,7 +39,15 @@ class AdmCalendarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id' => 'required',
+            'title' => 'required',
+            'starting_at' => 'required',
+            'ending_at' => 'required',
+            'calendario_eventos_id' => 'required'
+        ]);
+        AdmCalendario::create($request->all());
+        return redirect()->route('adm.calendario.index');
     }
 
     /**
@@ -56,9 +67,10 @@ class AdmCalendarioController extends Controller
      * @param  \App\Models\AdmCalendario  $admCalendario
      * @return \Illuminate\Http\Response
      */
-    public function edit(AdmCalendario $admCalendario)
+    public function edit(AdmCalendario $calendario)
     {
-        //
+        $calendario_eventos = AdmCalendarioEvento::all();
+        return view('adm.calendario.edit', ['calendario' => $calendario, 'calendario_eventos' => $calendario_eventos]);
     }
 
     /**
@@ -68,9 +80,10 @@ class AdmCalendarioController extends Controller
      * @param  \App\Models\AdmCalendario  $admCalendario
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AdmCalendario $admCalendario)
+    public function update(Request $request, AdmCalendario $calendario)
     {
-        //
+        $calendario->update($request->all());
+        return redirect()->route('adm.calendario.index');
     }
 
     /**
@@ -79,8 +92,9 @@ class AdmCalendarioController extends Controller
      * @param  \App\Models\AdmCalendario  $admCalendario
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AdmCalendario $admCalendario)
+    public function destroy(AdmCalendario $calendario)
     {
-        //
+        $calendario->delete();
+        return redirect()->route('adm.calendario.index');
     }
 }

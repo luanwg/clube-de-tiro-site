@@ -34,7 +34,8 @@ Route::middleware('auth')->prefix('adm')->name('adm.')->group(function() {
     Route::get('/sobre', [App\Http\Controllers\adm\AdmSobreController::class, 'index'])->name('sobre');
     Route::put('/sobre/{id}', [App\Http\Controllers\adm\AdmSobreController::class, 'update'])->name('sobre.update');
     Route::resource('/cursos', App\Http\Controllers\adm\AdmCursosController::class);
-    Route::get('/calendario', [App\Http\Controllers\adm\AdmCalendarioController::class, 'index'])->name('calendario');
-    Route::get('/galeria', [App\Http\Controllers\adm\AdmGaleriaController::class, 'index'])->name('galeria');
-    Route::get('/noticias', [App\Http\Controllers\adm\AdmNoticiasController::class, 'index'])->name('noticias');
+    Route::resource('/calendario', App\Http\Controllers\adm\AdmCalendarioController::class);
+    Route::resource('/calendario-evento', App\Http\Controllers\adm\AdmCalendarioEventoController::class);
+    Route::resource('/galeria', App\Http\Controllers\adm\AdmGaleriaController::class);
+    Route::resource('/noticias', App\Http\Controllers\adm\AdmNoticiasController::class);
 });

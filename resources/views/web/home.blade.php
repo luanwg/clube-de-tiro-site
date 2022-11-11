@@ -68,7 +68,7 @@
                                         <div class="service-info">
                                             <h3>{{ $calendario->title }}</h3>
                                             <p><button type="button" class="btn" style="cursor: default; background-color: {{$calendario->evento->color}}; color: #ffffff;">{{$calendario->evento->name}}</button></p>
-                                            <p class="margin-b-5">{{ $calendario->starting_at->format('d/m/Y H:m') }}</p>
+                                            <p class="margin-b-5">{{ $calendario->starting_at->format('d/m/Y H:m') }} - {{ $calendario->ending_at->format('d/m/Y H:m') }}</p>
                                         </div>
                                         <a href="{{ route('web.calendario') }}" class="content-wrapper-link"></a>
                                     </div>

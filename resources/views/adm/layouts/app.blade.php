@@ -43,14 +43,28 @@
                                     <a class="dropdown-item" href="{{route('adm.cursos.index')}}">Editar/Excluir</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('adm.calendario')}}">Calendário</a>
+                            <li class="nav-item dropdown">
+                                <a id="calendarioDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Calendário</a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="calendarioDropdown">
+                                    <a class="dropdown-item" href="{{route('adm.calendario.create')}}">Adicionar</a>
+                                    <a class="dropdown-item" href="{{route('adm.calendario.index')}}">Editar/Excluir</a>
+                                    <a class="dropdown-item" href="{{route('adm.calendario-evento.create')}}">Adicionar Nova Evento (Categoria)</a>
+                                    <a class="dropdown-item" href="{{route('adm.calendario-evento.index')}}">Editar/Excluir Evento (Categoria)</a>
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('adm.galeria')}}">Galeria</a>
+                            <li class="nav-item dropdown">
+                                <a id="galeriaDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Galeria</a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="galeriaDropdown">
+                                    <a class="dropdown-item" href="{{route('adm.galeria.create')}}">Adicionar Novo</a>
+                                    <a class="dropdown-item" href="{{route('adm.galeria.index')}}">Editar/Excluir</a>
+                                </div>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('adm.noticias')}}">Notícias</a>
+                            <li class="nav-item dropdown">
+                                <a id="noticiasDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Notícias</a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="noticiasDropdown">
+                                    <a class="dropdown-item" href="{{route('adm.noticias.create')}}">Adicionar Novo</a>
+                                    <a class="dropdown-item" href="{{route('adm.noticias.index')}}">Editar/Excluir</a>
+                                </div>
                             </li>
                         @endauth
                     </ul>
