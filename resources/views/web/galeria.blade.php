@@ -13,19 +13,21 @@
             <div class="panel-content">
                 <!-- id=categoria -->
                 @foreach ($galerias_categorias as $key => $categorias)
-                    <h4>{{$categorias->category}}</h4>
-                    <div id="lightgallery-{{$categorias->id}}">
-                        @foreach ($galerias as $key => $galeria)
-                            <a class="" href="{{ url ($galeria->image_src) }}" data-sub-html="{{$galeria->desc}}">
-                                <img class="img-responsive" src="{{ url ($galeria->image_src) }}" alt="{{$categorias->category}}">
-                            </a>
-                        @endforeach
+                    <div class="margin-b-40">
+                        <h4>{{$categorias->category}}</h4>
+                        <div id="lightgallery-{{$categorias->id}}">
+                            @foreach ($galerias as $key => $galeria)
+                                @if ($categorias->id == $galeria->galerias_categorias_id)
+                                    <a class="" href="{{ url ('storage/'.$galeria->image_src) }}" data-sub-html="{{$galeria->desc}}">
+                                        <img class="img-responsive" src="{{ url ('storage/'.$galeria->image_src) }}" alt="{{$categorias->category}}">
+                                    </a>
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
                 @endforeach
             </div>
         </div>
-
-
     </div>
     <!--// end row -->
 </div>

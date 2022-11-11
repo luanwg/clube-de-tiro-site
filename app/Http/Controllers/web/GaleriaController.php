@@ -16,7 +16,7 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        $galerias = Galeria::all();
+        $galerias = Galeria::orderBy('id', 'DESC')->get();
         $galerias_categorias = GaleriaCategoria::all();
         return view('web.galeria', ['galerias' => $galerias, 'galerias_categorias' => $galerias_categorias]);
     }

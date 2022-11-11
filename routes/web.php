@@ -37,5 +37,6 @@ Route::middleware('auth')->prefix('adm')->name('adm.')->group(function() {
     Route::resource('/calendario', App\Http\Controllers\adm\AdmCalendarioController::class);
     Route::resource('/calendario-evento', App\Http\Controllers\adm\AdmCalendarioEventoController::class);
     Route::resource('/galeria', App\Http\Controllers\adm\AdmGaleriaController::class);
+    Route::resource('/galeria-categoria', App\Http\Controllers\adm\AdmGaleriaCategoriaController::class);
     Route::resource('/noticias', App\Http\Controllers\adm\AdmNoticiasController::class);
 });

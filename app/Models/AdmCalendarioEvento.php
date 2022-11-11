@@ -13,8 +13,4 @@ class AdmCalendarioEvento extends Model
         'name',
         'color'
     ];
-
-    public function calendario($id) {
-        return $this->find($id);
-    }
 }

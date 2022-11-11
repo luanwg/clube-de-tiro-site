@@ -55,8 +55,11 @@
                             <li class="nav-item dropdown">
                                 <a id="galeriaDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Galeria</a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="galeriaDropdown">
-                                    <a class="dropdown-item" href="{{route('adm.galeria.create')}}">Adicionar Novo</a>
-                                    <a class="dropdown-item" href="{{route('adm.galeria.index')}}">Editar/Excluir</a>
+                                    <a class="dropdown-item" href="{{route('adm.galeria.create')}}">Adicionar Fotos</a>
+                                    <a class="dropdown-item" href="{{route('adm.galeria.index')}}">Editar/Excluir Fotos</a>
+                                    <a class="dropdown-item" href="{{route('adm.galeria-categoria.create')}}">Adicionar Galeria (Categoria)</a>
+                                    <a class="dropdown-item" href="{{route('adm.galeria-categoria.index')}}">Editar/Excluir Galeira (Categoria)</a>
+
                                 </div>
                             </li>
                             <li class="nav-item dropdown">

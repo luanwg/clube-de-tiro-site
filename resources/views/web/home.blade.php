@@ -148,7 +148,7 @@
                             <!-- Work -->
                             <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".{{$key}}s">
                                 <div class="work-overlay">
-                                    <img class="full-width img-responsive" src="{{ url ($galeria->image_src) }}" alt="{{$galeria->title}}">
+                                    <img class="full-width img-responsive" src="{{ url ('storage/'.$galeria->image_src) }}" alt="{{$galeria->title}}">
                                 </div>
                                 <div class="work-content">
                                     <h3 class="color-white margin-b-5">{{$galeria->title}}</h3>
