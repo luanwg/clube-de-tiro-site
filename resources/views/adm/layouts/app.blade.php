@@ -65,8 +65,10 @@
                             <li class="nav-item dropdown">
                                 <a id="noticiasDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Notícias</a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="noticiasDropdown">
-                                    <a class="dropdown-item" href="{{route('adm.noticias.create')}}">Adicionar Novo</a>
-                                    <a class="dropdown-item" href="{{route('adm.noticias.index')}}">Editar/Excluir</a>
+                                    <a class="dropdown-item" href="{{route('adm.noticias.create')}}">Adicionar Notícia</a>
+                                    <a class="dropdown-item" href="{{route('adm.noticias.index')}}">Editar/Excluir Notícia</a>
+                                    <a class="dropdown-item" href="{{route('adm.noticias-categorias.create')}}">Adicionar Categoria</a>
+                                    <a class="dropdown-item" href="{{route('adm.noticias-categorias.index')}}">Editar/Excluir Categoria</a>
                                 </div>
                             </li>
                         @endauth

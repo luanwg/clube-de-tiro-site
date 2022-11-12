@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('title');
-            $table->string('image')->nullable()->default('assets/img/noticias/default.jpg');
+            $table->string('image')->nullable()->default('img/noticias/default.jpg');
             $table->string('desc');
             $table->text('text');
             $table->timestamps();

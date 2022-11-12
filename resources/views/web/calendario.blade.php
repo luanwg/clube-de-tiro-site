@@ -3,7 +3,7 @@
 @section('content')
 
 
-@component('web.layouts._components.top', ['title' => 'Calendário', 'text' => 'Acompanhe aqui a data de todos os eventos.'])
+@component('web.layouts._components.top', ['title' => 'Calendário', 'text' => 'Acompanhe aqui a data de todos os eventos.', 'bg' => url ('assets/img/top/top.jpg')])
 @endcomponent
 @php $subtitle = "Calendário"; @endphp
 @section('title', 'Calendário')

@@ -3,7 +3,7 @@
 @section('content')
 
 @if (Route::getCurrentRoute()->getName() == "web.sobre")
-    @component('web.layouts._components.top', ['title' => 'Sobre Nós', 'text' => 'Conheça um pouco sobre nossa história...'])
+    @component('web.layouts._components.top', ['title' => 'Sobre Nós', 'text' => 'Conheça um pouco sobre nossa história...', 'bg' => url ('assets/img/top/top.jpg')])
     @endcomponent
     @section('title', 'Sobre Nós')
 @endif

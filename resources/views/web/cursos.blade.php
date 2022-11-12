@@ -3,10 +3,10 @@
 @section('content')
 
 @if (isset($curso))
-    @component('web.layouts._components.top', ['title' => $curso->name, 'text' => ''])
+    @component('web.layouts._components.top', ['title' => $curso->name, 'text' => '', 'bg' => url ('assets/img/top/top.jpg')])
     @endcomponent
 @else
-    @component('web.layouts._components.top', ['title' => 'Cursos', 'text' => 'Capacitação no uso esportivo de pistolas, revólveres, carabinas  e espingardas fornecendo noções Básicas do tiro prático.'])
+    @component('web.layouts._components.top', ['title' => 'Cursos', 'text' => 'Capacitação no uso esportivo de pistolas, revólveres, carabinas  e espingardas fornecendo noções Básicas do tiro prático.', 'bg' => url ('assets/img/top/top.jpg')])
     @endcomponent
 @endif
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-@component('web.layouts._components.top', ['title' => 'Galeria', 'text' => 'Veja todas nossas fotos e vídeos.'])
+@component('web.layouts._components.top', ['title' => 'Galeria', 'text' => 'Veja todas nossas fotos e vídeos.', 'bg' => url ('assets/img/top/top.jpg')])
 @endcomponent
 @section('title', 'Galeria')
 

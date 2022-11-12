@@ -39,4 +39,5 @@ Route::middleware('auth')->prefix('adm')->name('adm.')->group(function() {
     Route::resource('/galeria', App\Http\Controllers\adm\AdmGaleriaController::class);
     Route::resource('/galeria-categoria', App\Http\Controllers\adm\AdmGaleriaCategoriaController::class);
     Route::resource('/noticias', App\Http\Controllers\adm\AdmNoticiasController::class);
+    Route::resource('/noticias-categorias', App\Http\Controllers\adm\AdmNoticiasCategoriasController::class);
 });

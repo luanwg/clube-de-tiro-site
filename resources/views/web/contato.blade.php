@@ -2,7 +2,7 @@
 
 @section('content')
 
-@component('web.layouts._components.top', ['title' => 'Fale Conosco', 'text' => 'TEm alguma dúvida ou quer nos visitar? Entre em contato agora mesmo!'])
+@component('web.layouts._components.top', ['title' => 'Fale Conosco', 'text' => 'TEm alguma dúvida ou quer nos visitar? Entre em contato agora mesmo!', 'bg' => url ('assets/img/top/top.jpg')])
 @endcomponent
 @section('title', 'Fale Conosco')
 

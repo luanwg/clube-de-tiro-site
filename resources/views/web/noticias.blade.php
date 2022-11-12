@@ -3,11 +3,11 @@
 @section('content')
 
 @if (isset($noticia))
-    @component('web.layouts._components.top', ['title' => $noticia->title, 'text' => $noticia->created_at->format('d/m/Y H:i')])
+    @component('web.layouts._components.top', ['title' => $noticia->title, 'text' => $noticia->created_at->format('d/m/Y H:i'), 'bg' => url('storage/'.$noticia->image)])
     @endcomponent
     @php $subtitle = ""; @endphp
 @else
-    @component('web.layouts._components.top', ['title' => 'Notícias', 'text' => 'Fique por dentro de todas novidades'])
+    @component('web.layouts._components.top', ['title' => 'Notícias', 'text' => 'Fique por dentro de todas novidades', 'bg' => url ('assets/img/top/top.jpg')])
     @endcomponent
     @php $subtitle = "Últimas Novidades"; @endphp
 @endif
@@ -21,7 +21,7 @@
             <h2>{{ $subtitle }}</h2>
             @if (isset($noticia))
                 <div class="txt-pag">
-                    <p>{{ $noticia->text }}</p>
+                    <p>{!! $noticia->text !!}</p>
                 </div>
 
             @endif
@@ -38,7 +38,7 @@
                 <h4><a href="{{ route('web.noticia', ['id' => $noticia->id]) }}">{{ $noticia->title }}</a> <span class="text-uppercase margin-l-20">{{ $noticia->created_at->format('d/m/Y H:i') }}</span></h4>
                     <div class="margin-b-20">
                         <div class="wow zoomIn" data-wow-duration=".3" data-wow-delay=".1s">
-                            <img class="img-responsive" src="{{ url ($noticia->image) }}" alt="Latest Products Image">
+                            <img class="img-responsive" src="{{ url ('storage/'.$noticia->image) }}" alt="">
                         </div>
                     </div>
 
