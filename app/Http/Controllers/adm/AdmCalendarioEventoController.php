@@ -65,7 +65,6 @@ class AdmCalendarioEventoController extends Controller
      */
     public function edit(AdmCalendarioEvento $calendario_evento)
     {
-        dd($calendario_evento);
         return view('adm.calendario-evento.edit', ['calendario_evento' => $calendario_evento]);
     }
 
